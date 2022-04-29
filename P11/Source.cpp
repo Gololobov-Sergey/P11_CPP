@@ -55,15 +55,88 @@ int main()
 	cout << a << endl;
 
 	const int x = 12;*/
-	
-	int a, b, S;
+
+	/*int a, b, S;
 	cout << "¬вед≥ть значенн€ a = ";
 	cin >> a;
 	cout << "¬вед≥ть значенн€ b = ";
 	cin >> b;
 	S = a * b;
-	cout << "ѕлоща пр€мокутника з≥ сторонами а = " << a << ", b = " << 
-		b << ", дор≥внюЇ " << S << endl;
+	cout << "ѕлоща пр€мокутника з≥ сторонами а = " << a << ", b = " <<
+		b << ", дор≥внюЇ " << S << endl;*/
+
+
+	//
+	// +, -, ++, --
+	// +, -, *, /, %, +=, -=, *=, /=, %=
+
+	// !
+	// <, >, ==, <=, >=, !=, ||, &&, ^, 
+	// (), [], {}, . , , ::, ?: , #, ~, ", ',  
+
+	/*int a = 5, b = 4;
+	int c;
+	c = (a && b) - 4;
+	cout << c << endl;*/
+
+	/*int a, b, c;
+	float p, S;
+	cout << "¬ведите значение первой стороны ";
+	cin >> a;
+	cout << "¬ведите значение второй стороны ";
+	cin >> b;
+	cout << "¬ведите значение третьей стороны ";
+	cin >> c;
+	p = (a + b + c) / 2.f;
+	S = sqrt(p * (p - a) * (p - b) * (p - c));
+	cout << "ѕлощадь - " << S << endl;
+	cout << "P - " << p;*/
+
+	//123
+	//231
+	/*int number;
+
+	cout << "¬ведите число:";
+	cin >> number;
+
+	int num1 = number / 100;
+	int num2 = number / 10 % 10;
+	int num3 = number % 10;
+
+	int number2 = num2 * 100 + num3 * 10 + num1;
+
+	cout << number2 << endl;*/
+
+
+	int a, b, c;
+	cin >> a >> b >> c;
+	bool r = (a > 0) ^ (b > 0) ^ (c > 0);
+	cout << r << endl;
+
+
+	//c = ++a * (b++ + a/--b);
+	//cout << a << endl;   //5
+	//cout << a++ << endl; //5
+	//cout << a << endl;   //6
+	//cout << ++a << endl; //7
+	//cout << a << endl;   //7
+
+	//cout << b << endl;
+	//cout << c << endl;
+	//a = a + b;
+	//c = a / b;
+	//a = a + 1;
+	//a += 1;
+
+	//a++;
+	//++a;
+
+	//a--;
+
+	//cout << c << endl;
+
+
+
 
 
 	system("pause");
