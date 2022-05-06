@@ -66,74 +66,182 @@ int main()
 		b << ", дорівнює " << S << endl;*/
 
 
-	//
-	// +, -, ++, --
-	// +, -, *, /, %, +=, -=, *=, /=, %=
+		//
+		// +, -, ++, --
+		// +, -, *, /, %, +=, -=, *=, /=, %=
 
-	// !
-	// <, >, ==, <=, >=, !=, ||, &&, ^, 
-	// (), [], {}, . , , ::, ?: , #, ~, ", ',  
+		// !
+		// <, >, ==, <=, >=, !=, ||, &&, ^, 
+		// (), [], {}, . , , ::, ?: , #, ~, ", ',  
 
-	/*int a = 5, b = 4;
-	int c;
-	c = (a && b) - 4;
-	cout << c << endl;*/
+		/*int a = 5, b = 4;
+		int c;
+		c = (a && b) - 4;
+		cout << c << endl;*/
+
+		/*int a, b, c;
+		float p, S;
+		cout << "Введите значение первой стороны ";
+		cin >> a;
+		cout << "Введите значение второй стороны ";
+		cin >> b;
+		cout << "Введите значение третьей стороны ";
+		cin >> c;
+		p = (a + b + c) / 2.f;
+		S = sqrt(p * (p - a) * (p - b) * (p - c));
+		cout << "Площадь - " << S << endl;
+		cout << "P - " << p;*/
+
+		//123
+		//231
+		/*int number;
+
+		cout << "Введите число:";
+		cin >> number;
+
+		int num1 = number / 100;
+		int num2 = number / 10 % 10;
+		int num3 = number % 10;
+
+		int number2 = num2 * 100 + num3 * 10 + num1;
+
+		cout << number2 << endl;*/
+
+
+		/*int a, b, c, k, s;
+		cin >> a >> b >> c;
+		k = (a / c) * (b / c);
+		s = a * b - c * c * k;
+		cout << k << endl;
+		cout << s << endl;*/
+
+
+		/*bool r = (a > 0) + (b > 0) + (c > 0) == 1;
+		cout << r << endl;*/
+
+
+		//c = ++a * (b++ + a/--b);
+		//cout << a << endl;   //5
+		//cout << a++ << endl; //5
+		//cout << a << endl;   //6
+		//cout << ++a << endl; //7
+		//cout << a << endl;   //7
+
+		//cout << b << endl;
+		//cout << c << endl;
+		//a = a + b;
+		//c = a / b;
+		//a = a + 1;
+		//a += 1;
+
+		//a++;
+		//++a;
+
+		//a--;
+
+		//cout << c << endl;
 
 	/*int a, b, c;
-	float p, S;
-	cout << "Введите значение первой стороны ";
-	cin >> a;
-	cout << "Введите значение второй стороны ";
-	cin >> b;
-	cout << "Введите значение третьей стороны ";
-	cin >> c;
-	p = (a + b + c) / 2.f;
-	S = sqrt(p * (p - a) * (p - b) * (p - c));
-	cout << "Площадь - " << S << endl;
-	cout << "P - " << p;*/
-
-	//123
-	//231
-	/*int number;
-
-	cout << "Введите число:";
-	cin >> number;
-
-	int num1 = number / 100;
-	int num2 = number / 10 % 10;
-	int num3 = number % 10;
-
-	int number2 = num2 * 100 + num3 * 10 + num1;
-
-	cout << number2 << endl;*/
-
-
-	int a, b, c;
 	cin >> a >> b >> c;
-	bool r = (a > 0) ^ (b > 0) ^ (c > 0);
-	cout << r << endl;
+	if (c < a && c < b)
+	{
+		cout << a + b;
+	}
+	else
+	{
+		if (b < c && b < a)
+		{
+			cout << a + c;
+		}
+		else
+		{
+			cout << b + c;
+		}
+	}*/
+
+	// (condition)? oper1 : oper2;
+	/*int a, b, c, max;
+	cin >> a >> b;
+
+	if (a > b && a>c)
+	{
+		max = a;
+	}
+	else
+	{
+		if (b > c)
+		{
+			max = b;
+		}
+		else
+		{
+			max = c;
+		}
+		
+	}
+
+	(a > b && a > c) ? max = a : (b > c)? max = b : max = c;
+
+	max = (a > b && a > c) ? a : (b > c)? b : c;*/
+	
+	/*int a, b, res = 0;
+	char op;
+	cin >> a >> op >> b;*/
+	/*if (op == '+')
+	{
+		res = a + b;
+		cout << res << endl;
+	}
+	else
+	{
+		if (op == '-')
+		{
+			res = a - b;
+			cout << res << endl;
+		}
+		else
+		{
+			if (op == '*')
+			{
+				res = a * b;
+				cout << res << endl;
+			}
+			else
+			{
+				if (op == '/')
+				{
+					res = a / b;
+					cout << res << endl;
+				}
+				else
+				{
+					cout << "Error operation" << endl;
+				}
+			}
+		}
+	}*/
 
 
-	//c = ++a * (b++ + a/--b);
-	//cout << a << endl;   //5
-	//cout << a++ << endl; //5
-	//cout << a << endl;   //6
-	//cout << ++a << endl; //7
-	//cout << a << endl;   //7
+	/*switch (op)
+	{
+	case '+': res = a + b; break;
+	case '-': res = a - b; break;
+	case '*': res = a * b; break;
+	case '/': res = a / b; break;
+	default: cout << "Error operation" << endl; break;
+	}
+	cout << res << endl;*/
 
-	//cout << b << endl;
-	//cout << c << endl;
-	//a = a + b;
-	//c = a / b;
-	//a = a + 1;
-	//a += 1;
-
-	//a++;
-	//++a;
-
-	//a--;
-
-	//cout << c << endl;
+	int a;
+	cin >> a;
+	switch (a)
+	{
+	case 12: case 1: case 2: cout << "Зима"; break;
+	case 3:  case 4: case 5: cout << "Весна"; break;
+	case 6:  case 7: case 8: cout << "Лето"; break;
+	case 9: case 10: case 11: cout << "Осень"; break;
+	default: cout << "Error" << endl;
+	}
 
 
 
