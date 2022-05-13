@@ -3,12 +3,37 @@
 
 using namespace std;
 
+enum ConsoleColor
+{
+	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+};
+
+void SetColor(int text, int background)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+}
+
 int main()
 {
-	/*setlocale(LC_ALL, "");*/
+	
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	SetConsoleTitleA("P11 - C++");
 	cout.setf(ios::boolalpha);
+	
+	/*cout << "Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8," << endl;
+	cout << "LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15" << endl;
+	short textColor, backColor;
+	cout << "Введите какой вы хотите Цвет Текста (от 1 до 15): ";
+	cin >> textColor;
+	cout << "А также его фон (от 1 до 15): ";
+	cin >> backColor;*/
+	SetColor(15, 1);
+	system("cls");
+
+
+	//int color = ConsoleColor::Red;
 
 	/*cout << "Hello \"C++\"" << endl;
 	cout << "Hello \\C++\\" << endl;
@@ -66,80 +91,80 @@ int main()
 		b << ", дорівнює " << S << endl;*/
 
 
-		//
-		// +, -, ++, --
-		// +, -, *, /, %, +=, -=, *=, /=, %=
+	//
+	// +, -, ++, --
+	// +, -, *, /, %, +=, -=, *=, /=, %=
 
-		// !
-		// <, >, ==, <=, >=, !=, ||, &&, ^, 
-		// (), [], {}, . , , ::, ?: , #, ~, ", ',  
+	// !
+	// <, >, ==, <=, >=, !=, ||, &&, ^, 
+	// (), [], {}, . , , ::, ?: , #, ~, ", ',  
 
-		/*int a = 5, b = 4;
-		int c;
-		c = (a && b) - 4;
-		cout << c << endl;*/
+	/*int a = 5, b = 4;
+	int c;
+	c = (a && b) - 4;
+	cout << c << endl;*/
 
-		/*int a, b, c;
-		float p, S;
-		cout << "Введите значение первой стороны ";
-		cin >> a;
-		cout << "Введите значение второй стороны ";
-		cin >> b;
-		cout << "Введите значение третьей стороны ";
-		cin >> c;
-		p = (a + b + c) / 2.f;
-		S = sqrt(p * (p - a) * (p - b) * (p - c));
-		cout << "Площадь - " << S << endl;
-		cout << "P - " << p;*/
+	/*int a, b, c;
+	float p, S;
+	cout << "Введите значение первой стороны ";
+	cin >> a;
+	cout << "Введите значение второй стороны ";
+	cin >> b;
+	cout << "Введите значение третьей стороны ";
+	cin >> c;
+	p = (a + b + c) / 2.f;
+	S = sqrt(p * (p - a) * (p - b) * (p - c));
+	cout << "Площадь - " << S << endl;
+	cout << "P - " << p;*/
 
-		//123
-		//231
-		/*int number;
+	//123
+	//231
+	/*int number;
 
-		cout << "Введите число:";
-		cin >> number;
+	cout << "Введите число:";
+	cin >> number;
 
-		int num1 = number / 100;
-		int num2 = number / 10 % 10;
-		int num3 = number % 10;
+	int num1 = number / 100;
+	int num2 = number / 10 % 10;
+	int num3 = number % 10;
 
-		int number2 = num2 * 100 + num3 * 10 + num1;
+	int number2 = num2 * 100 + num3 * 10 + num1;
 
-		cout << number2 << endl;*/
-
-
-		/*int a, b, c, k, s;
-		cin >> a >> b >> c;
-		k = (a / c) * (b / c);
-		s = a * b - c * c * k;
-		cout << k << endl;
-		cout << s << endl;*/
+	cout << number2 << endl;*/
 
 
-		/*bool r = (a > 0) + (b > 0) + (c > 0) == 1;
-		cout << r << endl;*/
+	/*int a, b, c, k, s;
+	cin >> a >> b >> c;
+	k = (a / c) * (b / c);
+	s = a * b - c * c * k;
+	cout << k << endl;
+	cout << s << endl;*/
 
 
-		//c = ++a * (b++ + a/--b);
-		//cout << a << endl;   //5
-		//cout << a++ << endl; //5
-		//cout << a << endl;   //6
-		//cout << ++a << endl; //7
-		//cout << a << endl;   //7
+	/*bool r = (a > 0) + (b > 0) + (c > 0) == 1;
+	cout << r << endl;*/
 
-		//cout << b << endl;
-		//cout << c << endl;
-		//a = a + b;
-		//c = a / b;
-		//a = a + 1;
-		//a += 1;
 
-		//a++;
-		//++a;
+	//c = ++a * (b++ + a/--b);
+	//cout << a << endl;   //5
+	//cout << a++ << endl; //5
+	//cout << a << endl;   //6
+	//cout << ++a << endl; //7
+	//cout << a << endl;   //7
 
-		//a--;
+	//cout << b << endl;
+	//cout << c << endl;
+	//a = a + b;
+	//c = a / b;
+	//a = a + 1;
+	//a += 1;
 
-		//cout << c << endl;
+	//a++;
+	//++a;
+
+	//a--;
+
+	//cout << c << endl;
 
 	/*int a, b, c;
 	cin >> a >> b >> c;
@@ -232,7 +257,7 @@ int main()
 	}
 	cout << res << endl;*/
 
-	int a;
+	/*int a;
 	cin >> a;
 	switch (a)
 	{
@@ -241,11 +266,71 @@ int main()
 	case 6:  case 7: case 8: cout << "Лето"; break;
 	case 9: case 10: case 11: cout << "Осень"; break;
 	default: cout << "Error" << endl;
+	}*/
+
+	//SetColor(ConsoleColor::Yellow, ConsoleColor::Black);
+	//int d, m, dmax;
+	//cin >> d >> m;
+	//switch (m-1)
+	//{
+	//case 4: case 6: case 9: case 11: dmax = 30; break;
+	//case 2:                          dmax = 28; break;
+	//default:                         dmax = 31; break;
+	//}
+	//
+	//d--;
+	//if (d == 0)
+	//{
+	//	d = dmax;
+	//	m--;
+	//	m = (m == 0) ? 12 : m;
+	//}
+	////SetColor(ConsoleColor::LightRed, ConsoleColor::LightBlue);
+	//cout << d << " " << m << endl;
+	
+
+	/*while (true)
+	{
+		int a = 9;
 	}
 
+	do
+	{
+		int b = 9;
+	} while (true);*/
+
+	/*int n, k = 0, a = 1;
+	cin >> n;
+	while (a < n)
+	{
+		a *= 2;
+		k++;
+	}
+	if (a == n)
+	{
+		cout << "2 ^ " << k << " = " << n << endl;
+	}
+	else
+	{
+		cout << "Not 2^k != n" << endl;
+	}*/
+
+
+	int n, sum = 0, k = 1;
+	cin >> n;
+	cout << k;
+	while (sum < n)
+	{
+		sum += k;
+		k++;
+		cout << " + " << k;
+	}
+	cout << "\b\b\b";
+	cout << " <= " << n << endl;
+	cout << "k = " << --k << endl;
 
 
 
-
+	//SetColor(15, 0);
 	system("pause");
 }
