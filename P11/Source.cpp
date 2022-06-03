@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<iomanip>
 #include<Windows.h>
 
@@ -15,6 +15,14 @@ void SetColor(int text, int background)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
 }
 
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 int main()
 {
 
@@ -27,9 +35,9 @@ int main()
 	/*cout << "Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8," << endl;
 	cout << "LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15" << endl;
 	short textColor, backColor;
-	cout << "Ââåäèòå êàêîé âû õîòèòå Öâåò Òåêñòà (îò 1 äî 15): ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ°ÐºÐ¾Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¦Ð²ÐµÑ‚ Ð¢ÐµÐºÑÑ‚Ð° (Ð¾Ñ‚ 1 Ð´Ð¾ 15): ";
 	cin >> textColor;
-	cout << "À òàêæå åãî ôîí (îò 1 äî 15): ";
+	cout << "Ð Ñ‚Ð°ÐºÐ¶Ðµ ÐµÐ³Ð¾ Ñ„Ð¾Ð½ (Ð¾Ñ‚ 1 Ð´Ð¾ 15): ";
 	cin >> backColor;*/
 	SetColor(15, 1);
 	system("cls");
@@ -53,7 +61,7 @@ int main()
 
 
 	/*double cost;
-	cout << "Ââåäèòå öåíó çà 1ê êîíôåò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ Ð·Ð° 1Ðº ÐºÐ¾Ð½Ñ„ÐµÑ‚: ";
 	cin >> cost;
 	for (int i = 1; i <= 5; i++)
 	{
@@ -65,7 +73,7 @@ int main()
 	cin >> a;
 	for (double i = 1.2; i <= 3; i += 0.2)
 	{
-		cout << " Öåíà " << i << " êã êîíôåò ðàâíà  " << i * a << endl;
+		cout << " Ð¦ÐµÐ½Ð° " << i << " ÐºÐ³ ÐºÐ¾Ð½Ñ„ÐµÑ‚ Ñ€Ð°Ð²Ð½Ð°  " << i * a << endl;
 	}
 	cout << endl;*/
 
@@ -100,8 +108,69 @@ int main()
 	cout << m << endl;*/
 
 
+	/*for (int a = 0; a < 5; a++)
+	{
 
-	cout << endl;
+	}
+
+	int b = 1;
+	while (b <=5)
+	{
+		b++;
+	}
+
+	cout << endl;*/
+
+
+
+
+	/*int n = 15;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << ((i == 0 || i == n - 1 || j == 0 || j == n - 1) ? "*" : " ");
+		}
+		cout << endl;
+	}*/
+
+	/*while (true)
+	{
+		Sleep(500);
+		system("cls");
+		int n = 5;
+		for (int k = 0; k < 3; k++)
+		{
+			for (int i = 0; i < n - 2 + k; i++)
+			{
+				for (int j = 0; j < n - i - k + 1 + 10; j++)
+				{
+					cout << " ";
+				}
+				for (int j = 0; j < 2 * (i + k) + 1; j++)
+				{
+					if (i == n - 2 + k - 1 && (j == 0 || j == 2 * (i + k)) || (k == 0 && i == 0 && j == 0))
+					{
+						SetColor(rand() % 15, 1);
+						cout << "#";
+						SetColor(15, 1);
+					}
+					else
+					{
+						cout << "*";
+					}
+				}
+				cout << endl;
+			}
+		}
+	}*/
+
+	
+
+
+
+
+	
 
 
 
