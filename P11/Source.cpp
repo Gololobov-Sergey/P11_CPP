@@ -30,7 +30,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleTitleA("P11 - C++");
 	cout.setf(ios::boolalpha);
-	cout.setf(ios::showpos);
+	//cout.setf(ios::showpos);
 
 	/*cout << "Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8," << endl;
 	cout << "LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15" << endl;
@@ -165,8 +165,78 @@ int main()
 		}
 	}*/
 
-	
+	//int i = 0;
+	//while (true)
+	//{
+	//	for (; i < 20; i++) {
+	//		Sleep(100);
+	//		system("cls");
+	//		for (int j = 0; j < i; j++) {
+	//			cout << " ";
+	//		}
+	//		cout << "******";
+	//	};
+	//	for (; i > 0; i--) {
+	//		Sleep(100);
+	//		system("cls");
+	//		for (int j = 0; j < i; j++) {
+	//			cout << " ";
+	//		}
+	//		cout << "******";
+	//	};
+	//};
 
+	/*gotoxy(10, 10);
+	cout << "Hello";*/
+	/*int a;
+	cin >> a;
+	int x = 10, y = 0;
+	for (int i = 0; i < 20; i++)
+	{
+		gotoxy(x, i);
+		for (int j = 0; j < 5; j++)
+		{
+			if (j == 4)
+			{
+				SetColor(rand() % 13+2, 1);
+				cout << "#";
+				SetColor(15, 1);
+			}
+			else
+				cout << "*";
+			gotoxy(x, i + j);
+		}
+		Sleep(200);
+		gotoxy(x, i);
+		cout << " ";
+	}*/
+
+
+
+	//type name[size];	
+
+	const int n = 10;
+	int arr[n];
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << "arr[" << i << "] = ";
+		cin >> arr[i];
+	}
+	int k = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 0)
+			k++;
+	}
+	cout << k << endl;
+
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	
 
 
 
