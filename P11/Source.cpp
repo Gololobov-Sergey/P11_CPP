@@ -215,20 +215,20 @@ int main()
 
 	//type name[size];	
 
+	srand(time(0));
+
+	//розмір масиву
 	const int n = 10;
+
+	//масив
+	//int arr[n] = { 2,3,4,5,6,7,8,9,10,11 };
 	int arr[n];
+	int minDiapazon = 0;
+	int maxDiapazon = 20;
 	for (size_t i = 0; i < n; i++)
 	{
-		cout << "arr[" << i << "] = ";
-		cin >> arr[i];
+		arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
 	}
-	int k = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		if (arr[i] % 2 == 0)
-			k++;
-	}
-	cout << k << endl;
 
 	for (size_t i = 0; i < n; i++)
 	{
@@ -236,14 +236,79 @@ int main()
 	}
 	cout << endl;
 
-	
+	/*int a0, d;
+	cin >> a0 >> d;
+
+	for (size_t i = 0; i < n; i++)
+	{
+		arr[i] = a0 + i * d;
+	}*/
+
+	/*for (size_t i = 0; i < n; i++)
+	{
+		cout << "arr[" << i << "] = ";
+		cin >> arr[i];
+	}*/
+
+	/*int k = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 0)
+			k++;
+	}
+	cout << k << endl;*/
 
 
 
-	
+	/*bool isProgress = true;
+	int new_d = arr[1] - arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] != arr[0] + i * new_d)
+		{
+			isProgress = false;
+			break;
+		}
+	}
+	cout << isProgress << endl;*/
+
+	/*int k0 = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] == 0)
+			k0++;
+	}
+	cout << "\"0\" зустрічається " << k0 << " разів" << endl;
+
+	int k01 = 0;
+	for (int i = 0; arr[i] != 1; i++)
+	{
+		k01++;
+	}
+	cout << "Кількість \"0\" до першої \"1\" - " << k01 << endl;*/
+
+	/*bool isEvenNotEven = true;
+	for (size_t i = 0; i < n - 1; i++)
+	{
+		if (arr[i] % 2 == arr[i + 1] % 2)
+		{
+			isEvenNotEven = false;
+			break;
+		}
+	}
+	cout << isEvenNotEven << endl;*/
 
 
-
+	int imax = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] > arr[imax])
+		{
+			imax = i;
+		}
+	}
+	cout << "Max = " << arr[imax] << endl;
+	cout << "IndMax = " << imax << endl;
 
 	//SetColor(15, 0);
 	system("pause");
