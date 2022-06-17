@@ -1,6 +1,7 @@
 ﻿#include<iostream>
 #include<iomanip>
 #include<Windows.h>
+#define PRINT_TIME cout << "Time = " << (float)(clock() - t) / CLOCKS_PER_SEC << " sec" << endl;
 
 using namespace std;
 
@@ -216,6 +217,7 @@ int main()
 	//type name[size];	
 
 	srand(time(0));
+	clock_t t = clock();
 
 	//розмір масиву
 	const int n = 10;
@@ -224,7 +226,7 @@ int main()
 	//int arr[n] = { 2,3,4,5,6,7,8,9,10,11 };
 	int arr[n];
 	int minDiapazon = 0;
-	int maxDiapazon = 20;
+	int maxDiapazon = 9;
 	for (size_t i = 0; i < n; i++)
 	{
 		arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
@@ -235,6 +237,71 @@ int main()
 		cout << arr[i] << " ";
 	}
 	cout << endl;
+
+	int k = 0;
+	for (int i = 0; i < n - 1; ++i)
+	{
+		if (arr[i] > arr[i + 1])
+		{
+			cout << i << " ";
+			k++;
+		}
+	}
+	cout << endl;
+	cout << "kol-vo - " << k << endl;
+
+	PRINT_TIME
+
+	/*for (size_t i = 0; i < n; i++)
+	{
+		if (i < n / 2)
+		{
+			cout << arr[2 * i + 1] << " ";
+		}
+		else
+		{
+			cout << arr[2 * (i - n / 2)] << " ";
+		}
+	}
+	cout << endl;*/
+
+	/*int number, n1;
+	cout << "Number: " && cin >> number;
+	n1 = number;
+	int syst = 36;
+	long long roz = pow(syst, n - 1), i = 0;
+	while (roz > 0)
+	{
+		if (n1 >= roz)
+		{
+			int m = n1 / roz;
+			arr[i++] = (m < 10) ? m + 48 : m + 55;
+			n1 -= roz*(n1 / roz);
+		}
+		else
+		{
+			arr[i++] = '0';
+		}
+		roz /= syst;
+	}
+	cout << number << "[" << syst << "] = ";
+
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
+
+
+
+
+	/*int number = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		number += arr[i] * pow(2, n - 1 - i);
+	}
+	cout << number << endl;*/
+
 
 	/*int a0, d;
 	cin >> a0 >> d;
@@ -299,7 +366,7 @@ int main()
 	cout << isEvenNotEven << endl;*/
 
 
-	int imax = 0;
+	/*int imax = 0;
 	for (size_t i = 0; i < n; i++)
 	{
 		if (arr[i] > arr[imax])
@@ -308,7 +375,7 @@ int main()
 		}
 	}
 	cout << "Max = " << arr[imax] << endl;
-	cout << "IndMax = " << imax << endl;
+	cout << "IndMax = " << imax << endl;*/
 
 	//SetColor(15, 0);
 	system("pause");
