@@ -217,7 +217,7 @@ int main()
 	//type name[size];	
 
 	srand(time(0));
-	clock_t t = clock();
+	
 
 	//розмір масиву
 	const int n = 10;
@@ -225,8 +225,9 @@ int main()
 	//масив
 	//int arr[n] = { 2,3,4,5,6,7,8,9,10,11 };
 	int arr[n];
+	
 	int minDiapazon = 0;
-	int maxDiapazon = 9;
+	int maxDiapazon = 5;
 	for (size_t i = 0; i < n; i++)
 	{
 		arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
@@ -238,7 +239,120 @@ int main()
 	}
 	cout << endl;
 
-	int k = 0;
+	
+	//////// 24.06.2022  ////////////
+
+	clock_t t = clock();
+
+	//bubble sort
+	/*int count = 0;
+	int round = 0;
+	bool isSorted = true;
+	while(isSorted)
+	{
+		round++;
+		isSorted = false;
+		for (size_t j = 0; j < n - 1; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				swap(arr[j], arr[j + 1]);
+				count++;
+				isSorted = true;
+			}
+		}
+	}
+	cout << "Count = " << count << endl;
+	cout << "Round = " << round << endl;*/
+
+
+	// selected sort 
+	/*for (size_t i = 0; i < n-1; ++i)
+	{
+		int imin = i;
+		for (size_t j = i+1; j < n; j++)
+		{
+			if (arr[j] < arr[imin])
+			{
+				imin = j;
+			}
+		}
+		swap(arr[i], arr[imin]);
+	}*/
+
+
+	/*for (int i = n - 1; i > 0; i--)
+	{
+		arr[i] = arr[i - 1];
+	}
+	arr[0] = 0;
+
+	
+
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
+
+	/*int arrB[n];
+	int m = 0;*/
+
+	/*for (size_t i = 0; i < n; i++)
+	{
+		bool flag = true;
+		for (size_t j = 0; j < m; j++)
+		{
+			if (arr[i] == arrB[j])
+			{
+				flag = false;
+				break;
+			}
+		}
+		if (flag)
+		{
+			arrB[m++] = arr[i];
+		}
+	}*/
+
+
+	/*for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 1)
+		{
+			arrB[m++] = arr[i];
+		}
+	}*/
+
+
+	int arrB[n];
+	int m = 0;
+
+	for (size_t i = 0; i < n; i++)
+	{
+		int count = 0;
+		for (size_t j = 0; j < n; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				count++;
+			}
+		}
+		if (count < 3)
+		{
+			arrB[m++] = arr[i];
+		}
+	}
+
+
+	for (size_t i = 0; i < m; i++)
+	{
+		cout << arrB[i] << " ";
+	}
+	cout << endl;
+	PRINT_TIME
+
+	/*int k = 0;
 	for (int i = 0; i < n - 1; ++i)
 	{
 		if (arr[i] > arr[i + 1])
@@ -248,135 +362,135 @@ int main()
 		}
 	}
 	cout << endl;
-	cout << "kol-vo - " << k << endl;
+	cout << "kol-vo - " << k << endl;*/
 
-	PRINT_TIME
+	//PRINT_TIME
 
-	/*for (size_t i = 0; i < n; i++)
-	{
-		if (i < n / 2)
+		/*for (size_t i = 0; i < n; i++)
 		{
-			cout << arr[2 * i + 1] << " ";
+			if (i < n / 2)
+			{
+				cout << arr[2 * i + 1] << " ";
+			}
+			else
+			{
+				cout << arr[2 * (i - n / 2)] << " ";
+			}
 		}
-		else
+		cout << endl;*/
+
+		/*int number, n1;
+		cout << "Number: " && cin >> number;
+		n1 = number;
+		int syst = 36;
+		long long roz = pow(syst, n - 1), i = 0;
+		while (roz > 0)
 		{
-			cout << arr[2 * (i - n / 2)] << " ";
+			if (n1 >= roz)
+			{
+				int m = n1 / roz;
+				arr[i++] = (m < 10) ? m + 48 : m + 55;
+				n1 -= roz*(n1 / roz);
+			}
+			else
+			{
+				arr[i++] = '0';
+			}
+			roz /= syst;
 		}
-	}
-	cout << endl;*/
+		cout << number << "[" << syst << "] = ";
 
-	/*int number, n1;
-	cout << "Number: " && cin >> number;
-	n1 = number;
-	int syst = 36;
-	long long roz = pow(syst, n - 1), i = 0;
-	while (roz > 0)
-	{
-		if (n1 >= roz)
+		for (size_t i = 0; i < n; i++)
 		{
-			int m = n1 / roz;
-			arr[i++] = (m < 10) ? m + 48 : m + 55;
-			n1 -= roz*(n1 / roz);
+			cout << arr[i] << " ";
 		}
-		else
+		cout << endl;*/
+
+
+
+
+		/*int number = 0;
+		for (size_t i = 0; i < n; i++)
 		{
-			arr[i++] = '0';
+			number += arr[i] * pow(2, n - 1 - i);
 		}
-		roz /= syst;
-	}
-	cout << number << "[" << syst << "] = ";
-
-	for (size_t i = 0; i < n; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;*/
+		cout << number << endl;*/
 
 
+		/*int a0, d;
+		cin >> a0 >> d;
 
-
-	/*int number = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		number += arr[i] * pow(2, n - 1 - i);
-	}
-	cout << number << endl;*/
-
-
-	/*int a0, d;
-	cin >> a0 >> d;
-
-	for (size_t i = 0; i < n; i++)
-	{
-		arr[i] = a0 + i * d;
-	}*/
-
-	/*for (size_t i = 0; i < n; i++)
-	{
-		cout << "arr[" << i << "] = ";
-		cin >> arr[i];
-	}*/
-
-	/*int k = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		if (arr[i] % 2 == 0)
-			k++;
-	}
-	cout << k << endl;*/
-
-
-
-	/*bool isProgress = true;
-	int new_d = arr[1] - arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] != arr[0] + i * new_d)
+		for (size_t i = 0; i < n; i++)
 		{
-			isProgress = false;
-			break;
-		}
-	}
-	cout << isProgress << endl;*/
+			arr[i] = a0 + i * d;
+		}*/
 
-	/*int k0 = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		if (arr[i] == 0)
-			k0++;
-	}
-	cout << "\"0\" зустрічається " << k0 << " разів" << endl;
-
-	int k01 = 0;
-	for (int i = 0; arr[i] != 1; i++)
-	{
-		k01++;
-	}
-	cout << "Кількість \"0\" до першої \"1\" - " << k01 << endl;*/
-
-	/*bool isEvenNotEven = true;
-	for (size_t i = 0; i < n - 1; i++)
-	{
-		if (arr[i] % 2 == arr[i + 1] % 2)
+		/*for (size_t i = 0; i < n; i++)
 		{
-			isEvenNotEven = false;
-			break;
-		}
-	}
-	cout << isEvenNotEven << endl;*/
+			cout << "arr[" << i << "] = ";
+			cin >> arr[i];
+		}*/
 
-
-	/*int imax = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		if (arr[i] > arr[imax])
+		/*int k = 0;
+		for (size_t i = 0; i < n; i++)
 		{
-			imax = i;
+			if (arr[i] % 2 == 0)
+				k++;
 		}
-	}
-	cout << "Max = " << arr[imax] << endl;
-	cout << "IndMax = " << imax << endl;*/
+		cout << k << endl;*/
 
-	//SetColor(15, 0);
-	system("pause");
+
+
+		/*bool isProgress = true;
+		int new_d = arr[1] - arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			if (arr[i] != arr[0] + i * new_d)
+			{
+				isProgress = false;
+				break;
+			}
+		}
+		cout << isProgress << endl;*/
+
+		/*int k0 = 0;
+		for (size_t i = 0; i < n; i++)
+		{
+			if (arr[i] == 0)
+				k0++;
+		}
+		cout << "\"0\" зустрічається " << k0 << " разів" << endl;
+
+		int k01 = 0;
+		for (int i = 0; arr[i] != 1; i++)
+		{
+			k01++;
+		}
+		cout << "Кількість \"0\" до першої \"1\" - " << k01 << endl;*/
+
+		/*bool isEvenNotEven = true;
+		for (size_t i = 0; i < n - 1; i++)
+		{
+			if (arr[i] % 2 == arr[i + 1] % 2)
+			{
+				isEvenNotEven = false;
+				break;
+			}
+		}
+		cout << isEvenNotEven << endl;*/
+
+
+		/*int imax = 0;
+		for (size_t i = 0; i < n; i++)
+		{
+			if (arr[i] > arr[imax])
+			{
+				imax = i;
+			}
+		}
+		cout << "Max = " << arr[imax] << endl;
+		cout << "IndMax = " << imax << endl;*/
+
+		//SetColor(15, 0);
+		system("pause");
 }
