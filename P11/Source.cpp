@@ -217,32 +217,76 @@ int main()
 	//type name[size];	
 
 	srand(time(0));
-	
 
-	//розмір масиву
-	const int n = 10;
-
-	//масив
-	//int arr[n] = { 2,3,4,5,6,7,8,9,10,11 };
-	int arr[n];
-	
-	int minDiapazon = 0;
-	int maxDiapazon = 5;
-	for (size_t i = 0; i < n; i++)
+	const int row = 5, col = 6;
+	int arr[row][col];
+	int minDiapazon = 5;
+	int maxDiapazon = 9;
+	for (size_t i = 0; i < row; i++)
 	{
-		arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = 10* (rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon);
+		}
 	}
 
-	for (size_t i = 0; i < n; i++)
+	for (size_t i = 0; i < row; i++)
 	{
-		cout << arr[i] << " ";
+		int sumRow = 0;
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(4) << arr[i][j];
+			sumRow += arr[i][j];
+		}
+		cout << setw(4) << "|" << setw(4) << sumRow;
+		cout << endl;
+	}
+
+	for (size_t i = 0; i < col+2; i++)
+	{
+		cout << setw(4) << "----";
 	}
 	cout << endl;
 
-	
+	int sumAll = 0;
+	for (size_t j = 0; j < col; j++)
+	{
+		int sumCol = 0;
+		for (size_t i = 0; i < row; i++)
+		{
+			sumCol += arr[i][j];
+		}
+		sumAll += sumCol;
+		cout << setw(4) << sumCol;
+	}
+	cout << setw(4) << "|" << setw(4) << sumAll;
+	cout << endl;
+
+
+	////розмір масиву
+	//const int n = 10;
+
+	////масив
+	////int arr[n] = { 2,3,4,5,5,5,8,9,10,11 };
+	//int arr[n];
+	//
+	//int minDiapazon = 0;
+	//int maxDiapazon = 5;
+	//for (size_t i = 0; i < n; i++)
+	//{
+	//	arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
+	//}
+
+	//for (size_t i = 0; i < n; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//cout << endl;
+
+
 	//////// 24.06.2022  ////////////
 
-	clock_t t = clock();
+	//clock_t t = clock();
 
 	//bubble sort
 	/*int count = 0;
@@ -287,7 +331,7 @@ int main()
 	}
 	arr[0] = 0;
 
-	
+
 
 	for (size_t i = 0; i < n; i++)
 	{
@@ -324,11 +368,85 @@ int main()
 		}
 	}*/
 
+	/*int arrB[n*2];
+	int m = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		arrB[m++] = arr[i];
+		if (arr[i] < 0)
+			arrB[m++] = 0;
+	}*/
 
-	int arrB[n];
+	/*int even = 0;
+	bool isEven = false;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (arr[i] % 2 == 0 && !isEven)
+		{
+			even = arr[i];
+			isEven = true;
+		}
+		if (arr[i] % 2 == 0)
+			arr[i] += even;
+	}*/
+
+
+	/*int arrB[n+n/2];
+	int m = 0;
+	for (size_t i = 1; i < n; i+=2)
+	{
+		arrB[m++] = arr[i - 1];
+		arrB[m++] = arr[i];
+		arrB[m++] = arr[i];
+	}*/
+
+	/*int arrB[n + 1];
+	int m = 0;
+	int pos;
+	cin >> pos;
+	for (size_t i = 0; i <= pos; i++)
+	{
+		arrB[m++] = arr[i];
+	}
+	arrB[m++] = 0;
+	for (size_t i = pos+1; i < n; i++)
+	{
+		arrB[m++] = arr[i];
+	}*/
+
+
+
+	/*int arrB[n];
 	int m = 0;
 
-	for (size_t i = 0; i < n; i++)
+	arrB[m++] = arr[0];
+	for (size_t i = 1; i < n; i++)
+	{
+		if (arr[i] != arr[i - 1])
+		{
+			arrB[m++] = arr[i];
+		}
+	}*/
+
+
+	/*for (size_t i = 0; i < n; i++)
+	{
+		int count = 0;
+		for (size_t j = 0; j < n; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				count++;
+			}
+		}
+		if (count != 2)
+		{
+			arrB[m++] = arr[i];
+		}
+	}*/
+
+
+	/*for (size_t i = 0; i < n; i++)
 	{
 		int count = 0;
 		for (size_t j = 0; j < n; j++)
@@ -342,15 +460,15 @@ int main()
 		{
 			arrB[m++] = arr[i];
 		}
-	}
+	}*/
 
 
-	for (size_t i = 0; i < m; i++)
+	/*for (size_t i = 0; i < n; i++)
 	{
-		cout << arrB[i] << " ";
+		cout << arr[i] << " ";
 	}
 	cout << endl;
-	PRINT_TIME
+	PRINT_TIME*/
 
 	/*int k = 0;
 	for (int i = 0; i < n - 1; ++i)
@@ -492,5 +610,5 @@ int main()
 		cout << "IndMax = " << imax << endl;*/
 
 		//SetColor(15, 0);
-		system("pause");
+	system("pause");
 }
