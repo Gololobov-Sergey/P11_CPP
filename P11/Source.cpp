@@ -40,8 +40,135 @@ int main()
 	cin >> textColor;
 	cout << "А также его фон (от 1 до 15): ";
 	cin >> backColor;*/
-	SetColor(15, 1);
+	SetColor(15, 0);
 	system("cls");
+
+	srand(time(0));
+
+	const int row = 6, col = 6;
+	int arr[row][col]; // = { {1,2,3},{4,5,6},{7,8,9} };
+
+	/*int M[row];
+	for (size_t i = 0; i < row; i++)
+	{
+		M[i] = rand() % 9;
+	}
+
+	int D = rand() % 9;
+	cout << "D=" << D << endl;*/
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 50;
+		}
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(4) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	int min = arr[0][0], max = arr[0][0], imin = 0, imax = 0;
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			if (arr[i][j] > max)
+			{
+				imax = i;
+				max = arr[i][j];
+			}
+			if (arr[i][j] < min)
+			{
+				imin = i;
+				min = arr[i][j];
+			}
+		}
+	}
+
+	for (size_t i = 0; i < col; i++)
+	{
+		swap(arr[imin][i], arr[imax][i]);
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(4) << arr[i][j];
+		}
+		cout << endl;
+	}
+
+
+	/*int count = 0;
+	for (size_t i = 0; i < row; i++)
+	{
+		bool isUniq = true;
+		for (size_t j = 0; j < col; j++)
+		{
+			for (size_t k = j+1; k < col; k++)
+			{
+				if (arr[i][j] == arr[i][k])
+				{
+					isUniq = false;
+					break;
+				}
+			}
+			if (!isUniq)
+				break;
+		}
+		if (isUniq)
+			count++;
+
+		for (size_t j = 0; j < col; j++)
+		{
+			SetColor((isUniq) ? 12 : 15, 0);
+			cout << setw(4) << arr[i][j];
+		}
+		SetColor(White, Black);
+		cout << endl;
+
+	}
+	cout << endl;
+	cout << "Count = " << count << endl;*/
+
+
+
+	/*int sum, max = INT_MIN, imax = 0;
+	for (size_t i = 0; i < row; i++)
+	{
+		sum = 0;
+		for (size_t j = 0; j < col; j++)
+		{
+			sum += arr[i][j];
+		}
+		if (sum > max)
+		{
+			max = sum;
+			imax = i;
+		}
+	}
+	cout << "S=" << max << ", i=" << imax << endl;*/
+
+
+	
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(4) << (i%2 == 0)?arr[i][j]:arr[i][col-1-j];
+		}
+		cout << endl;
+	}*/
 
 
 	/*int a, b;
@@ -216,9 +343,49 @@ int main()
 
 	//type name[size];	
 
-	srand(time(0));
+	//srand(time(0));
 
-	const int row = 5, col = 6;
+	/*srand(time(0));
+	const int n = 10;
+	int m = 0;
+	int arr[n];
+	int arrB[n];
+	int minDiapazon = 0;
+	int maxDiapazon = 9;
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % (maxDiapazon - minDiapazon + 1) + minDiapazon;
+		cout << arr[i];
+	}
+	cout << endl;
+	int count = 0;
+	for (int i = 0; i < n; i++)
+	{
+		count = 0;
+		for (int j = 0; j < n; i++)
+		{
+			if (arr[i] == arr[j])
+			{
+				count++;
+			}
+		}
+		if (count != 2)
+		{
+			arrB[m] = arr[i];
+			m++;
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < m; i++)
+	{
+		cout << arrB[i];
+	}*/
+
+
+
+
+
+	/*const int row = 5, col = 6;
 	int arr[row][col];
 	int minDiapazon = 5;
 	int maxDiapazon = 9;
@@ -260,7 +427,7 @@ int main()
 		cout << setw(4) << sumCol;
 	}
 	cout << setw(4) << "|" << setw(4) << sumAll;
-	cout << endl;
+	cout << endl;*/
 
 
 	////розмір масиву
