@@ -24,6 +24,40 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
+
+// type name(param)
+// {
+//   body
+// }
+
+void starLine()
+{
+	for (size_t i = 0; i < 10; i++)
+	{
+		cout << "*";
+	}
+	cout << endl;
+}
+
+
+int Sum(int a, int b)
+{
+	int c = a + b;
+	return c;
+}
+
+bool isEven(int a)
+{
+	return a % 2 == 0;
+}
+
+
+float avg3(int a, int b, int c)
+{
+	float d = (a + b + c) / 3.f;
+	return d;
+}
+
 int main()
 {
 
@@ -45,8 +79,27 @@ int main()
 
 	srand(time(0));
 
-	const int row = 6, col = 6;
-	int arr[row][col]; // = { {1,2,3},{4,5,6},{7,8,9} };
+	//starLine();
+
+	//int a = 3, b = 5;
+	////int c = Sum(a, b);
+	//cout << Sum(a, b) << endl;
+	//cout << Sum(5, 77) << endl;
+	//cout << avg3(3,4,6) << endl;
+
+	int xx[5] = { 1,5,4,9,6 };
+	int count = 0;
+	for (size_t i = 0; i < 5; i++)
+	{
+		if (isEven(xx[i]))
+			count++;
+	}
+	cout << count << endl;
+
+	//const int row = 5, col = 5;
+	//int arr[row][col]; // = { {1,2,3},{4,5,6},{7,8,9} };
+
+
 
 	/*int M[row];
 	for (size_t i = 0; i < row; i++)
@@ -57,7 +110,7 @@ int main()
 	int D = rand() % 9;
 	cout << "D=" << D << endl;*/
 
-	for (size_t i = 0; i < row; i++)
+	/*for (size_t i = 0; i < row; i++)
 	{
 		for (size_t j = 0; j < col; j++)
 		{
@@ -73,9 +126,9 @@ int main()
 		}
 		cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
-	int min = arr[0][0], max = arr[0][0], imin = 0, imax = 0;
+	/*int min = arr[0][0], max = arr[0][0], imin = 0, imax = 0;
 	for (size_t i = 0; i < row; i++)
 	{
 		for (size_t j = 0; j < col; j++)
@@ -91,11 +144,44 @@ int main()
 				min = arr[i][j];
 			}
 		}
-	}
+	}*/
 
-	for (size_t i = 0; i < col; i++)
+	/*for (size_t i = 0; i < col; i++)
 	{
 		swap(arr[imin][i], arr[imax][i]);
+	}*/
+
+
+	/*for (size_t i = 0; i < row/2; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			swap(arr[i][j], arr[row-1-i][j]);
+		}
+	}*/
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col / 2; j++)
+		{
+			swap(arr[i][j], arr[i][col - 1 - j]);
+		}
+	}*/
+
+	/*for (size_t i = 1; i < row; i++)
+	{
+		for (size_t j = 0; j < i; j++)
+		{
+			swap(arr[i][j], arr[j][i]);
+		}
+	}*/
+
+	/*for (size_t i = 0; i < row - 1; i++)
+	{
+		for (size_t j = 0; j < col - 1 - i; j++)
+		{
+			swap(arr[i][j], arr[col - 1 - j][col - 1 - i]);
+		}
 	}
 
 	for (size_t i = 0; i < row; i++)
@@ -105,7 +191,7 @@ int main()
 			cout << setw(4) << arr[i][j];
 		}
 		cout << endl;
-	}
+	}*/
 
 
 	/*int count = 0;
@@ -159,7 +245,7 @@ int main()
 	cout << "S=" << max << ", i=" << imax << endl;*/
 
 
-	
+
 
 	/*for (size_t i = 0; i < row; i++)
 	{
