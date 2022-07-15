@@ -25,14 +25,28 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-
-void starLine()
+void starLine(char symbol, int count)
 {
-	for (size_t i = 0; i < 10; i++)
+	for (size_t i = 0; i < count; i++)
 	{
-		cout << "*";
+		cout << symbol;
 	}
 	cout << endl;
+}
+
+void starLine(int count = 10, char symbol = '*')
+{
+	for (size_t i = 0; i < count; i++)
+	{
+		cout << symbol;
+	}
+	cout << endl;
+}
+
+template<class T1, class T2, class T3>
+auto Sum(T1 a, T2 b, T3 c) -> decltype(b+c)
+{
+	return a + b + c;
 }
 
 
@@ -51,7 +65,8 @@ float avg3(int a, int b, int c)
 
 /////// 11.07.2022  //////////////
 
-void setArray(int arr[], int size, int min, int max)
+template<class T>
+void setArray(T arr[], int size, int min, int max)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -59,7 +74,8 @@ void setArray(int arr[], int size, int min, int max)
 	}
 }
 
-void printArray(int arr[], int size)
+template<class T>
+void printArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -68,10 +84,10 @@ void printArray(int arr[], int size)
 	cout << endl;
 }
 
-
-int maxValueArray(int arr[], int size)
+template<class T>
+T maxValueArray(T arr[], int size)
 {
-	int max = arr[0];
+	T max = arr[0];
 	for (size_t i = 1; i < size; i++)
 	{
 		if (arr[i] > max)
@@ -82,7 +98,8 @@ int maxValueArray(int arr[], int size)
 	return max;
 }
 
-int findKeyArray(int arr[], int size, int key)
+template<class T>
+int findKeyArray(T arr[], int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -168,5 +185,29 @@ void printArray2D(int arr[][10], int row, int col)
 			cout << setw(count + 1) << arr[i][j];
 		}
 		cout << endl;
+	}
+}
+
+
+template <class T>
+void selectedSort(T arr[], const int SIZE, bool Choice) {
+
+	for (int i = 0; i < SIZE - 1; ++i)
+	{
+		int MinIndex = i;
+		for (int j = i + 1; j < SIZE; ++j)
+		{
+			if (Choice)
+			{
+				if (arr[j] < arr[MinIndex])
+					MinIndex = j;
+			}
+			else
+			{
+				if (arr[j] > arr[MinIndex])
+					MinIndex = j;
+			}
+		}
+		swap(arr[i], arr[MinIndex]);
 	}
 }
