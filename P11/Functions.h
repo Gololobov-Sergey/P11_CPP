@@ -211,3 +211,102 @@ void selectedSort(T arr[], const int SIZE, bool Choice) {
 		swap(arr[i], arr[MinIndex]);
 	}
 }
+
+template<class T>
+T maxValueMainDiagonal2D(T arr[10][10], int row, int col)
+{
+	T max = arr[0][0];
+	for (size_t i = 1; i < row; i++)
+	{
+		if (arr[i][i] > max)
+		{
+			max = arr[i][i];
+		}
+	}
+	return max;
+}
+
+int factorial(int n)
+{
+	int f = 1;
+	for (size_t i = 2; i <= n; i++)
+	{
+		f *= i;
+	}
+	return f;
+}
+
+
+int factorial_r(int n)
+{
+	if (n == 1)
+		return 1;
+	return n * factorial_r(n - 1);
+}
+
+
+void num(int n)
+{
+	cout << n << " ";
+	if (n > 1)
+		num(n - 1);
+}
+
+void num_(int n)
+{
+	if (n > 1)
+		num_(n - 1);
+	cout << n << " ";
+	
+}
+
+int countNum(int n)
+{
+	if (n < 10)
+		return 1;
+	return 1 + countNum(n / 10);
+}
+
+int sumNum(int n)
+{
+	if (n < 10)
+		return n;
+	return n%10 + sumNum(n / 10);
+}
+
+
+int sumAB(int a, int b)
+{
+	if (a == b)
+	{
+		return a;
+	}
+	return a + sumAB(a + 1, b);
+}
+
+int fibo(int n)
+{
+	static int c = 0;
+	cout << ++c << endl;
+	if (n < 3) return 1;
+	return fibo(n - 1) + fibo(n - 2);
+}
+
+
+double pow_(int a, int n)
+{
+	static int c = 0;
+	cout << ++c << endl;
+	if (n == 0)
+		return 1;
+	if (n < 0)
+		return 1. / pow_(a, -n);
+	if (n == 1) 
+		return a;
+	return a * pow_(a, n - 1);
+}
+
+int maxValueRecur(int a[], int n)
+{
+	return 0;
+}

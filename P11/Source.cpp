@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 int main()
 {
 	//SetConsoleCP(1251);
@@ -10,18 +12,35 @@ int main()
 	cout.setf(ios::boolalpha);
 	//cout.setf(ios::showpos);
 
+
+	////// 18.07.2022 //////
+
+
+	//cout << factorial_r(5) << endl;
+	//num_(5);
+	//cout << sumNum(12345) << endl;
+	//cout << fibo(6) << endl;
+	cout << pow_(2,-3) << endl;
+
+	/*const int row = 5, col = 5;
+	int arr2D[10][10];
+	setArray2D(arr2D, row, col, 0, 50);
+	printArray2D(arr2D, row, col);
+	cout << maxValueMainDiagonal2D(arr2D, row, col) << endl;*/
+
+
 	///// 15.07.2022 ////////
 
 	//starLine();
 	//starLine(23);
-	starLine('#', 24);
-	starLine(24, '#');
+	//starLine('#', 24);
+	//starLine(24, '#');
 
 	/*cout << Sum(4,6) << endl;
 	cout << Sum(4,6,5) << endl;
 	cout << Sum(4,6,5,3) << endl;*/
 
-	int g;
+	/*int g;
 	cin >> g;
 	const int size = 20;
 	char arr[size];
@@ -42,7 +61,7 @@ int main()
 	int c = 8;
 	auto a = 5.2;
 	decltype(a+c) x;
-	a = 5.2;
+	a = 5.2;*/
 
 
 	/*const int size = 20;
