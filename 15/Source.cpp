@@ -81,6 +81,7 @@ int main()
 	char c;
 	printMatrix(a);
 	int count = 0;
+	bool isESC = false;
 	while (!isWinner(a))
 	{
 		// move
@@ -132,10 +133,13 @@ int main()
 				}
 				break;
 			case ESC:
+				isESC = true;
+				break;
 			default:
 				break;
 			}
-
+			if (isESC)
+				break;
 			system("cls");
 			printMatrix(a);
 		}

@@ -12,6 +12,26 @@ int main()
 	cout.setf(ios::boolalpha);
 	//cout.setf(ios::showpos);
 
+	////// 22.07.2022 //////
+
+	int a = 5;
+	cout << a << endl;
+	cout << typeid(a).name() << endl;
+	cout << &a << endl;
+	cout << sizeof(a) << endl;
+
+	int *pa = &a;
+	cout << pa << endl;
+	*pa = 100;
+	cout << a << endl;
+
+	int b = 55;
+	pa = &b;
+	*pa = 999;
+	cout << b << endl;
+
+	int* pc, pd;
+
 
 	////// 18.07.2022 //////
 
@@ -20,7 +40,7 @@ int main()
 	//num_(5);
 	//cout << sumNum(12345) << endl;
 	//cout << fibo(6) << endl;
-	cout << pow_(2,-3) << endl;
+	//cout << pow_(2,-3) << endl;
 
 	/*const int row = 5, col = 5;
 	int arr2D[10][10];
