@@ -55,6 +55,18 @@ void printMatrix(int a[size][size])
 	}
 }
 
+bool isWinner(int a[size][size])
+{
+	for (size_t i = 0; i < size * size; i++)
+	{
+		if (a[i / size][i % size] != i + 1)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 enum DIRECTION
 {
 	UP = 72, DOWN = 80, LEFT = 75, RIGHT = 77, ESC = 27
@@ -64,11 +76,12 @@ int main()
 {
 	srand(time(0));
 
-	int a[size][size] = {0};
+	int a[size][size] = { 0 };
 	setMatrix(a);
 	char c;
 	printMatrix(a);
-	while (true)
+	int count = 0;
+	while (!isWinner(a))
 	{
 		// move
 		if (_kbhit())
@@ -90,28 +103,32 @@ int main()
 
 			switch (c)
 			{
-			case UP: 
+			case UP:
 				if (row != size - 1)
 				{
 					swap(a[row][col], a[row + 1][col]);
+					count++;
 				}
 				break;
 			case DOWN:
 				if (row != 0)
 				{
 					swap(a[row][col], a[row - 1][col]);
+					count++;
 				}
 				break;
 			case LEFT:
 				if (col != size - 1)
 				{
 					swap(a[row][col], a[row][col + 1]);
+					count++;
 				}
 				break;
 			case RIGHT:
 				if (col != 0)
 				{
 					swap(a[row][col], a[row][col - 1]);
+					count++;
 				}
 				break;
 			case ESC:
@@ -123,4 +140,5 @@ int main()
 			printMatrix(a);
 		}
 	}
+	cout << "Count - " << count << endl;
 }
