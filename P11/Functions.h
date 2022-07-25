@@ -66,7 +66,7 @@ float avg3(int a, int b, int c)
 /////// 11.07.2022  //////////////
 
 template<class T>
-void setArray(T arr[], int size, int min, int max)
+void setArray(T* arr, int size, int min = 0, int max = 9)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -75,7 +75,7 @@ void setArray(T arr[], int size, int min, int max)
 }
 
 template<class T>
-void printArray(T arr[], int size)
+void printArray(T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -85,7 +85,7 @@ void printArray(T arr[], int size)
 }
 
 template<class T>
-T maxValueArray(T arr[], int size)
+T maxValueArray(T* arr, int size)
 {
 	T max = arr[0];
 	for (size_t i = 1; i < size; i++)
@@ -99,7 +99,7 @@ T maxValueArray(T arr[], int size)
 }
 
 template<class T>
-int findKeyArray(T arr[], int size, T key)
+int findKeyArray(T* arr, int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -190,7 +190,7 @@ void printArray2D(int arr[][10], int row, int col)
 
 
 template <class T>
-void selectedSort(T arr[], const int SIZE, bool Choice) {
+void selectedSort(T* arr, const int SIZE, bool Choice) {
 
 	for (int i = 0; i < SIZE - 1; ++i)
 	{
